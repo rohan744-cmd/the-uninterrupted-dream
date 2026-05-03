@@ -50,8 +50,19 @@ nav .nav-links a:hover { opacity: 1; }
 
 /* HERO */
 .hero { position: relative; width: 100%; height: 100vh; min-height: 560px; overflow: hidden; }
-.hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero-image {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center center;
+}
 .hero-vignette { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,14,39,0.15) 0%, rgba(10,14,39,0) 40%, rgba(10,14,39,0.55) 100%); }
+
+@media (max-width: 768px) {
+    .hero { height: 100svh; min-height: 500px; }
+    .hero-image {
+        object-position: 60% center;
+        width: 100%; height: 100%;
+    }
+}
 .scroll-cue {
     position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
     color: var(--white); font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
@@ -247,15 +258,15 @@ section { padding: 100px 48px; max-width: 1400px; margin: 0 auto; }
 
 /* PROOF */
 .proof { background: var(--indigo-deep); margin: 0; max-width: none; padding: 100px 48px; }
-.proof-inner { max-width: 760px; margin: 0 auto; }
+.proof-inner { max-width: 760px; margin: 0 auto; text-align: center; }
 .proof h2 { font-family: var(--display); font-weight: 300; font-size: clamp(18px, 2.8vw, 34px); line-height: 1.18; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 36px; }
-.proof p { font-size: clamp(13px, 1.2vw, 16px); line-height: 1.8; font-weight: 300; letter-spacing: 0.04em; opacity: 0.85; margin-bottom: 20px; }
+.proof p { font-size: clamp(13px, 1.2vw, 16px); line-height: 1.8; font-weight: 300; letter-spacing: 0.04em; opacity: 0.85; margin-bottom: 20px; text-align: center; }
 .proof p strong { font-weight: 600; color: var(--cyan); }
 .proof-chain {
-    margin: 44px 0; padding: 32px 0;
+    margin: 44px auto; padding: 32px 0;
     border-top: 1px solid rgba(245,241,234,0.1);
     border-bottom: 1px solid rgba(245,241,234,0.1);
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex; align-items: center; justify-content: center;
     flex-wrap: nowrap; gap: 8px;
 }
 .chain-item { flex: 1; min-width: 0; text-align: center; }
@@ -264,6 +275,7 @@ section { padding: 100px 48px; max-width: 1400px; margin: 0 auto; }
 .chain-arrow { color: var(--cyan); opacity: 0.45; font-size: 14px; flex-shrink: 0; }
 @media (max-width: 600px) {
     .proof { padding: 56px 20px; }
+    .proof-inner { text-align: center; }
     .proof-chain { flex-direction: column; align-items: center; gap: 12px; }
     .chain-arrow { transform: rotate(90deg); font-size: 16px; opacity: 0.5; }
     .chain-item { width: 100%; min-width: unset; }
