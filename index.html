@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Uninterrupted Dream — SensAi by The Sleep Company</title>
+<meta name="description" content="India's first AI mattress, engineered to keep your nights whole.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --indigo: #0A0E27;
+    --indigo-deep: #050715;
+    --cyan: #5BB8E5;
+    --violet: #6B4A8F;
+    --rose: #C9849D;
+    --white: #F5F1EA;
+    --charcoal: #2A2D3A;
+    --display: 'Cormorant Garamond', serif;
+    --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--indigo);
+    color: var(--white);
+    font-family: var(--body);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* NAVIGATION */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 24px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(10,14,39,0.6) 0%, rgba(10,14,39,0) 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background 0.3s ease;
+}
+
+nav .logo {
+    height: 28px;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 36px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+nav .nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 18px 24px;
+    }
+    nav .nav-links {
+        display: none;
+    }
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-vignette {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10,14,39,0.2) 0%, rgba(10,14,39,0) 30%, rgba(10,14,39,0) 70%, rgba(10,14,39,0.5) 100%);
+    pointer-events: none;
+}
+
+.scroll-cue {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    animation: bob 3s ease-in-out infinite;
+}
+
+.scroll-cue::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 32px;
+    background: var(--white);
+    margin: 12px auto 0;
+    opacity: 0.5;
+}
+
+@keyframes bob {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -6px); }
+}
+
+/* SECTIONS */
+section {
+    padding: 120px 48px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 80px 24px;
+    }
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    font-weight: 500;
+    margin-bottom: 24px;
+    opacity: 0.9;
+}
+
+.display-1 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(40px, 6vw, 84px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+}
+
+.display-2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(32px, 4.5vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+
+.body-large {
+    font-size: clamp(17px, 1.4vw, 22px);
+    line-height: 1.6;
+    font-weight: 300;
+    color: var(--white);
+    opacity: 0.85;
+}
+
+.body-text {
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+/* INSIGHT HOOK */
+.insight {
+    text-align: center;
+    padding-top: 160px;
+    padding-bottom: 160px;
+    max-width: 1100px;
+}
+
+.insight .display-1 em {
+    font-style: italic;
+    color: var(--cyan);
+    font-weight: 300;
+}
+
+.insight-stat {
+    margin-top: 64px;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+/* QUIZ INTERACTIVE */
+.quiz {
+    background: var(--indigo-deep);
+    margin: 0;
+    max-width: none;
+    padding: 140px 48px;
+}
+
+.quiz-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.quiz h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(32px, 4.5vw, 56px);
+    margin-bottom: 56px;
+    line-height: 1.1;
+}
+
+.quiz-question {
+    margin-bottom: 48px;
+    transition: opacity 0.5s ease;
+}
+
+.quiz-question .q-text {
+    font-size: 17px;
+    margin-bottom: 24px;
+    font-weight: 300;
+    opacity: 0.9;
+    letter-spacing: 0.02em;
+}
+
+.quiz-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.quiz-option {
+    background: transparent;
+    border: 1px solid rgba(245,241,234,0.25);
+    color: var(--white);
+    padding: 14px 28px;
+    font-family: var(--body);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 999px;
+}
+
+.quiz-option:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+.quiz-option.selected {
+    background: var(--cyan);
+    color: var(--indigo);
+    border-color: var(--cyan);
+}
+
+.quiz-result {
+    margin-top: 64px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    pointer-events: none;
+}
+
+.quiz-result.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.quiz-result-line {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: clamp(24px, 3vw, 36px);
+    color: var(--cyan);
+    line-height: 1.3;
+    font-weight: 300;
+}
+
+/* IDEA IN MOTION (GIF) */
+.idea-motion {
+    text-align: center;
+    padding: 140px 0 0;
+}
+
+.idea-motion .container-text {
+    max-width: 760px;
+    margin: 0 auto 80px;
+    padding: 0 24px;
+}
+
+.idea-gif-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.idea-gif {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.idea-caption {
+    max-width: 760px;
+    margin: 80px auto 0;
+    padding: 0 24px;
+    text-align: center;
+}
+
+/* WORLDS GALLERY */
+.worlds {
+    padding: 160px 0 120px;
+    max-width: none;
+}
+
+.worlds-intro {
+    max-width: 760px;
+    margin: 0 auto 80px;
+    padding: 0 48px;
+    text-align: center;
+}
+
+.worlds-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 48px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .worlds-grid {
+        grid-template-columns: 1fr;
+        padding: 0 24px;
+        gap: 12px;
+    }
+    .worlds-intro {
+        padding: 0 24px;
+    }
+}
+
+.world-card {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--indigo-deep);
+}
+
+.world-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.world-card:hover img {
+    transform: scale(1.04);
+}
+
+.world-card .world-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 32px 28px 28px;
+    background: linear-gradient(180deg, rgba(10,14,39,0) 0%, rgba(10,14,39,0.85) 100%);
+    color: var(--white);
+}
+
+.world-card .world-label .world-feature {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.world-card .world-label .world-line {
+    font-family: var(--display);
+    font-size: clamp(20px, 2.4vw, 28px);
+    font-weight: 300;
+    line-height: 1.2;
+    font-style: italic;
+}
+
+/* PROOF SECTION */
+.proof {
+    background: var(--indigo-deep);
+    margin: 0;
+    max-width: none;
+    padding: 140px 48px;
+}
+
+.proof-inner {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.proof h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(32px, 4.5vw, 56px);
+    line-height: 1.1;
+    margin-bottom: 56px;
+    letter-spacing: -0.01em;
+}
+
+.proof p {
+    font-size: clamp(16px, 1.2vw, 19px);
+    line-height: 1.75;
+    font-weight: 300;
+    opacity: 0.85;
+    margin-bottom: 28px;
+}
+
+.proof p strong {
+    font-weight: 500;
+    color: var(--cyan);
+}
+
+.proof-chain {
+    margin: 64px 0;
+    padding: 48px 0;
+    border-top: 1px solid rgba(245,241,234,0.1);
+    border-bottom: 1px solid rgba(245,241,234,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.proof-chain .chain-item {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+}
+
+.proof-chain .chain-item .chain-step {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 12px;
+    opacity: 0.8;
+}
+
+.proof-chain .chain-item .chain-text {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.3;
+    font-weight: 300;
+}
+
+.proof-chain .chain-arrow {
+    color: var(--cyan);
+    opacity: 0.5;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .proof-chain {
+        flex-direction: column;
+    }
+    .proof-chain .chain-arrow {
+        transform: rotate(90deg);
+    }
+}
+
+/* ENGINEERING */
+.engineering {
+    padding: 140px 48px;
+    text-align: center;
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.engineering p {
+    font-family: var(--display);
+    font-size: clamp(22px, 2.6vw, 32px);
+    line-height: 1.4;
+    font-weight: 300;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.engineering p::before,
+.engineering p::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--cyan);
+    margin: 32px auto;
+    opacity: 0.6;
+}
+
+/* DECISION / CTA */
+.decision {
+    background: var(--indigo-deep);
+    margin: 0;
+    max-width: none;
+    padding: 140px 48px;
+    text-align: center;
+}
+
+.decision-inner {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.decision h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.1;
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+}
+
+.decision .price {
+    margin: 48px 0;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.decision .price-amount {
+    font-family: var(--display);
+    font-size: clamp(40px, 5vw, 56px);
+    font-weight: 300;
+    color: var(--white);
+}
+
+.decision .price-detail {
+    font-size: 14px;
+    opacity: 0.6;
+    letter-spacing: 0.04em;
+}
+
+.cta-button {
+    display: inline-block;
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--cyan);
+    padding: 20px 48px;
+    font-family: var(--body);
+    font-size: 13px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border-radius: 999px;
+    font-weight: 500;
+}
+
+.cta-button:hover {
+    background: var(--cyan);
+    color: var(--indigo);
+}
+
+.decision-fineprint {
+    margin-top: 48px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    opacity: 0.5;
+    line-height: 1.6;
+}
+
+.decision-fineprint span {
+    margin: 0 16px;
+}
+
+/* FOOTER */
+footer {
+    background: var(--indigo-deep);
+    border-top: 1px solid rgba(245,241,234,0.08);
+    padding: 56px 48px 40px;
+    text-align: center;
+}
+
+.footer-logo {
+    height: 24px;
+    opacity: 0.7;
+    margin-bottom: 32px;
+}
+
+footer .footer-line {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    margin-bottom: 8px;
+}
+
+footer .credit {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    opacity: 0.5;
+    font-style: italic;
+    font-family: var(--display);
+}
+
+/* ANIMATION ON SCROLL */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .quiz, .proof, .decision {
+        padding: 80px 24px;
+    }
+    .engineering {
+        padding: 80px 24px;
+    }
+    .idea-motion {
+        padding-top: 80px;
+    }
+    .worlds {
+        padding: 80px 0;
+    }
+    .insight {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <img src="logo.png" alt="The Sleep Company" class="logo">
+    <div class="nav-links">
+        <a href="#worlds">Worlds</a>
+        <a href="#proof">Science</a>
+        <a href="#decision">SensAi</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding: 0; max-width: none;">
+    <img src="cosmic-kv.jpg" alt="The Uninterrupted Dream" class="hero-image">
+    <div class="hero-vignette"></div>
+    <div class="scroll-cue">Scroll</div>
+</section>
+
+<!-- INSIGHT HOOK -->
+<section class="insight fade-in">
+    <div class="eyebrow">The Truth About Tonight</div>
+    <h1 class="display-1">
+        India is the second-most sleep-deprived country on Earth.<br>
+        <em>Not because we don't have time to sleep.</em><br>
+        Because our nights have stopped being ours.
+    </h1>
+    <div class="insight-stat">India ranks 2nd globally · World Sleep Foundation</div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz">
+    <div class="quiz-inner">
+        <div class="eyebrow">A Quick Question</div>
+        <h2>How was your night?</h2>
+
+        <div class="quiz-question" data-question="1">
+            <div class="q-text">How many times did you wake up last night?</div>
+            <div class="quiz-options">
+                <button class="quiz-option" data-q="1">Once</button>
+                <button class="quiz-option" data-q="1">2-3 times</button>
+                <button class="quiz-option" data-q="1">4 or more</button>
+                <button class="quiz-option" data-q="1">I don't remember</button>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="2">
+            <div class="q-text">How tired do you feel right now?</div>
+            <div class="quiz-options">
+                <button class="quiz-option" data-q="2">A little</button>
+                <button class="quiz-option" data-q="2">Honestly tired</button>
+                <button class="quiz-option" data-q="2">Running on coffee</button>
+                <button class="quiz-option" data-q="2">Exhausted</button>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="3">
+            <div class="q-text">What's been waking you up?</div>
+            <div class="quiz-options">
+                <button class="quiz-option" data-q="3">Heat</button>
+                <button class="quiz-option" data-q="3">My partner</button>
+                <button class="quiz-option" data-q="3">Snoring</button>
+                <button class="quiz-option" data-q="3">A racing mind</button>
+                <button class="quiz-option" data-q="3">All of it</button>
+            </div>
+        </div>
+
+        <div class="quiz-result" id="quizResult">
+            <div class="quiz-result-line">Tonight, that's what we're protecting.</div>
+        </div>
+    </div>
+</section>
+
+<!-- THE IDEA IN MOTION (GIF) -->
+<section class="idea-motion fade-in">
+    <div class="container-text">
+        <div class="eyebrow">The Idea</div>
+        <h2 class="display-2">A single mattress.<br>A world of dreams.</h2>
+    </div>
+    <div class="idea-gif-wrapper">
+        <img src="half-and-half.gif" alt="The Uninterrupted Dream in motion" class="idea-gif">
+    </div>
+    <div class="idea-caption">
+        <p class="body-large">SensAi is the first mattress engineered to keep your nights whole. It protects the uninterrupted depth your dreams need to do their work.</p>
+    </div>
+</section>
+
+<!-- WORLDS GALLERY -->
+<section class="worlds fade-in" id="worlds">
+    <div class="worlds-intro">
+        <div class="eyebrow">A World of Worlds</div>
+        <h2 class="display-2">Every dream is a place.<br>SensAi protects them all.</h2>
+        <p class="body-large" style="margin-top: 24px;">Each feature is a different chamber of the same dream. Held by the grid beneath you.</p>
+    </div>
+    <div class="worlds-grid">
+        <div class="world-card">
+            <img src="bedroom.jpg" alt="The night begins">
+            <div class="world-label">
+                <div class="world-feature">Where it begins</div>
+                <div class="world-line">Tonight, the grid wakes up to you.</div>
+            </div>
+        </div>
+        <div class="world-card">
+            <img src="clouds.jpg" alt="Held by clouds">
+            <div class="world-label">
+                <div class="world-feature">AI-driven firmness</div>
+                <div class="world-line">The cloud holds you.</div>
+            </div>
+        </div>
+        <div class="world-card">
+            <img src="meadow.jpg" alt="Restored in the meadow">
+            <div class="world-label">
+                <div class="world-feature">Cradle Mode · Sleep Aid Mode</div>
+                <div class="world-line">The meadow restores you.</div>
+            </div>
+        </div>
+        <div class="world-card">
+            <img src="pool.jpg" alt="Carried by water">
+            <div class="world-label">
+                <div class="world-feature">Independent Recline · Anti-Snore</div>
+                <div class="world-line">The water carries you.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof" id="proof">
+    <div class="proof-inner">
+        <div class="eyebrow">The Science</div>
+        <h2>Why we wake up tired,<br>even when we sleep enough.</h2>
+        <p>Sleep isn't measured in hours. It's measured in <strong>uninterrupted depth.</strong> Every night, your body fights for it. Every micro-arousal, the kind you don't even remember, fragments REM cycles and steals the recovery you came to bed for.</p>
+        <p>Heat. Pressure points. A partner's movement. The faint sound of snoring. A mind that won't stop. These aren't inconveniences. They're <strong>silent thieves of restoration.</strong></p>
+
+        <div class="proof-chain">
+            <div class="chain-item">
+                <div class="chain-step">01</div>
+                <div class="chain-text">Disturbance</div>
+            </div>
+            <div class="chain-arrow">→</div>
+            <div class="chain-item">
+                <div class="chain-step">02</div>
+                <div class="chain-text">Micro-arousal</div>
+            </div>
+            <div class="chain-arrow">→</div>
+            <div class="chain-item">
+                <div class="chain-step">03</div>
+                <div class="chain-text">REM fragmentation</div>
+            </div>
+            <div class="chain-arrow">→</div>
+            <div class="chain-item">
+                <div class="chain-step">04</div>
+                <div class="chain-text">Tired tomorrow</div>
+            </div>
+        </div>
+
+        <p>SensAi's adaptive intelligence senses each disturbance the moment it begins, and responds. Firmness shifts. Airflow regulates. Head elevation adjusts. The night rebuilds itself around you, before you ever know it almost broke.</p>
+        <p style="font-family: var(--display); font-style: italic; font-size: clamp(20px, 2vw, 26px); color: var(--cyan); margin-top: 48px; font-weight: 300;">The deepest sleep is the one you don't remember.</p>
+    </div>
+</section>
+
+<!-- ENGINEERING -->
+<section class="engineering fade-in">
+    <div class="eyebrow" style="text-align: center; margin-bottom: 32px;">The Engineering</div>
+    <p>The Sleep Company has been engineering comfort for ten years. SensAi is what happens when ten years of engineering learn to listen.</p>
+</section>
+
+<!-- DECISION / CTA -->
+<section class="decision" id="decision">
+    <div class="decision-inner">
+        <div class="eyebrow">SensAi by The Sleep Company</div>
+        <h2>Begin your<br>uninterrupted dream.</h2>
+        <div class="price">
+            <div class="price-amount">₹2,79,000</div>
+            <div class="price-detail">/ Queen Size</div>
+        </div>
+        <a href="#" class="cta-button" onclick="event.preventDefault(); alert('Prototype: this is where the configuration journey begins.');">Begin</a>
+        <div class="decision-fineprint">
+            <span>EMI from ₹11,625/mo</span>
+            <span>·</span>
+            <span>100-night trial</span>
+            <span>·</span>
+            <span>White-glove delivery</span>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <img src="logo.png" alt="The Sleep Company" class="footer-logo">
+    <div class="footer-line">India's First AI Mattress · The Uninterrupted Dream</div>
+    <div class="credit">A campaign reimagined by Rohan Rane</div>
+</footer>
+
+<script>
+// FADE-IN ON SCROLL
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// QUIZ INTERACTION
+const answers = { 1: null, 2: null, 3: null };
+
+document.querySelectorAll('.quiz-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const q = btn.dataset.q;
+        // Deselect siblings
+        document.querySelectorAll(`.quiz-option[data-q="${q}"]`).forEach(sibling => {
+            sibling.classList.remove('selected');
+        });
+        btn.classList.add('selected');
+        answers[q] = btn.textContent;
+
+        // If all answered, reveal result
+        if (answers[1] && answers[2] && answers[3]) {
+            setTimeout(() => {
+                document.getElementById('quizResult').classList.add('visible');
+            }, 400);
+        }
+    });
+});
+
+// HERO PARALLAX (subtle)
+const hero = document.querySelector('.hero-image');
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    if (scrolled < window.innerHeight) {
+        hero.style.transform = `translateY(${scrolled * 0.3}px) scale(${1 + scrolled * 0.0002})`;
+    }
+});
+
+// NAV BACKGROUND ON SCROLL
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 100) {
+        nav.style.background = 'rgba(10,14,39,0.85)';
+    } else {
+        nav.style.background = 'linear-gradient(180deg, rgba(10,14,39,0.6) 0%, rgba(10,14,39,0) 100%)';
+    }
+});
+</script>
+
+</body>
+</html>
