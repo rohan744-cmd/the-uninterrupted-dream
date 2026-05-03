@@ -58,10 +58,7 @@ nav .nav-links a:hover { opacity: 1; }
 
 @media (max-width: 768px) {
     .hero { height: 100svh; min-height: 500px; }
-    .hero-image {
-        object-position: 60% center;
-        width: 100%; height: 100%;
-    }
+    .hero-image { object-position: center center; }
 }
 .scroll-cue {
     position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
@@ -338,7 +335,10 @@ footer { background: var(--indigo-deep); border-top: 1px solid rgba(245,241,234,
 
 <!-- HERO -->
 <section class="hero" style="padding:0;max-width:none;">
-    <img src="cosmic-kv.jpg" alt="The Uninterrupted Dream" class="hero-image">
+    <picture>
+        <source media="(max-width: 768px)" srcset="cosmic-kv-mobile.jpg">
+        <img src="cosmic-kv.jpg" alt="The Uninterrupted Dream" class="hero-image">
+    </picture>
     <div class="hero-vignette"></div>
     <div class="scroll-cue">Scroll</div>
 </section>
