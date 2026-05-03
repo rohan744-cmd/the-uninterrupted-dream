@@ -49,16 +49,23 @@ nav .nav-links a:hover { opacity: 1; }
 @media (max-width: 768px) { nav { padding: 16px 24px; } nav .nav-links { display: none; } }
 
 /* HERO */
-.hero { position: relative; width: 100%; height: 100vh; min-height: 560px; overflow: hidden; }
-.hero-image {
-    position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; object-position: center center;
+.hero {
+    position: relative; width: 100%; height: 100vh; min-height: 560px; overflow: hidden;
+    background-image: url('cosmic-kv.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
+.hero-image { display: none; }
 .hero-vignette { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,14,39,0.15) 0%, rgba(10,14,39,0) 40%, rgba(10,14,39,0.55) 100%); }
 
 @media (max-width: 768px) {
-    .hero { height: 100svh; min-height: 500px; }
-    .hero-image { object-position: center center; }
+    .hero {
+        height: 100svh; min-height: 500px;
+        background-image: url('cosmic-kv-mobile.jpg');
+        background-position: center center;
+        background-size: cover;
+    }
 }
 .scroll-cue {
     position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
@@ -335,10 +342,6 @@ footer { background: var(--indigo-deep); border-top: 1px solid rgba(245,241,234,
 
 <!-- HERO -->
 <section class="hero" style="padding:0;max-width:none;">
-    <picture>
-        <source media="(max-width: 768px)" srcset="cosmic-kv-mobile.jpg">
-        <img src="cosmic-kv.jpg" alt="The Uninterrupted Dream" class="hero-image">
-    </picture>
     <div class="hero-vignette"></div>
     <div class="scroll-cue">Scroll</div>
 </section>
@@ -621,13 +624,15 @@ window.addEventListener('mouseup', e => {
 function startAuto() { autoTimer = setInterval(() => goTo(current + 1), 5000); }
 startAuto();
 
-// HERO PARALLAX — desktop only
-const heroImg = document.querySelector('.hero-image');
+// HERO PARALLAX — desktop only, CSS background version
+const heroEl = document.querySelector('.hero');
 const isMobile = () => window.innerWidth <= 768;
 window.addEventListener('scroll', () => {
     if (isMobile()) return;
     const s = window.pageYOffset;
-    if (s < window.innerHeight) heroImg.style.transform = `translateY(${s * 0.28}px)`;
+    if (s < window.innerHeight) {
+        heroEl.style.backgroundPositionY = `calc(center + ${s * 0.2}px)`;
+    }
 });
 
 // NAV SCROLL
